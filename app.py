@@ -6,7 +6,7 @@ from openai import OpenAI
 from dotenv import load_dotenv # For loading .env file
 
 # Load environment variables from .env file
-# load_dotenv()
+load_dotenv()
 
 app = Flask(__name__)
 
