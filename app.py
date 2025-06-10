@@ -6,15 +6,15 @@ from openai import OpenAI
 from dotenv import load_dotenv # For loading .env file
 
 # Load environment variables from .env file
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
 
 # --- Configuration ---
-WEBHOOK_VERIFY_TOKEN = os.environ.get("WEBHOOK_VERIFY_TOKEN")
-GRAPH_API_TOKEN = os.environ.get("GRAPH_API_TOKEN")
-PORT = os.environ.get("PORT", 5002) # Default to 5002 if not set
-OPEN_AI_API_KEY = os.environ.get("OPEN_AI_API_KEY")
+WEBHOOK_VERIFY_TOKEN = os.getenv("WEBHOOK_VERIFY_TOKEN")
+GRAPH_API_TOKEN = os.getenv("GRAPH_API_TOKEN")
+PORT = os.getenv("PORT", 5002) # Default to 5002 if not set
+OPEN_AI_API_KEY = os.getenv("OPEN_AI_API_KEY")
 
 # --- Initialize OpenAI Client ---
 if not OPEN_AI_API_KEY:
