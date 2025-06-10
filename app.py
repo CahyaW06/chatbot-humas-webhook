@@ -5,8 +5,10 @@ import requests
 from openai import OpenAI
 from dotenv import load_dotenv # For loading .env file
 
+path = os.path.dirname(os.path.abspath(__file__))
+
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(os.path.join(path, ".env"))
 
 app = Flask(__name__)
 
